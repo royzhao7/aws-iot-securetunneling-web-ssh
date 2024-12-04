@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthguardService]},
-  {path: 'auth', component: AuthComponent, canActivate: [NauthguardService], data: { title: 'Sign In' }},
+  // {path: 'auth', component: AuthComponent, canActivate: [NauthguardService], data: { title: 'Sign In' }},
   {path: '**', redirectTo: '/'}
 ];
 

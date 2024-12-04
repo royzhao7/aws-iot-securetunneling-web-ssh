@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule} from './modules/material.module';
-import { AuthComponent } from './components/auth/auth.component';
+// import { AuthComponent } from './components/auth/auth.component';
 import { UiService } from './services/ui.service';
 import { AuthService } from './services/auth.service';
 import { XtermService } from './services/xterm.service';
@@ -27,7 +27,7 @@ import { ErrorService } from './services/error.service';
     HeaderComponent,
     MenuComponent,
     HomeComponent,
-    AuthComponent
+    // AuthComponent
   ],
   imports: [
     BrowserModule,

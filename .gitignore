@@ -2,7 +2,7 @@ cdkwebapp/*.js
 !cdkwebapp/jest.config.js
 cdkwebapp/*.d.ts
 cdkwebapp/node_modules
-
+WEBAPP/node_modules
 
 # CDK asset staging directory
 cdkwebapp/.cdk.staging
