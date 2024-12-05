@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router, ActivatedRoute, NavigationEnd, CanActivate } from '@angular/router';
-
+import { Routes, RouterModule, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
-import { AuthComponent } from '../components/auth/auth.component';
-import { AuthguardService } from '../services/authguard.service';
-import { NauthguardService } from '../services/nauthguard.service';
 import { Title } from '@angular/platform-browser';
 import { filter } from 'rxjs/operators';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, canActivate: [AuthguardService]},
-  // {path: 'auth', component: AuthComponent, canActivate: [NauthguardService], data: { title: 'Sign In' }},
+  {path: '', component: HomeComponent},
   {path: '**', redirectTo: '/'}
 ];
 

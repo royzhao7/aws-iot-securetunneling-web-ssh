@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,16 +11,10 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   user: { id: string; username: string; email: string };
 
-  constructor(private uiService: UiService, private authService: AuthService) { }
+  constructor(private uiService: UiService) { }
 
   ngOnInit() {
-    this.authService.isLoggedIn$.subscribe(
-      isLoggedIn => (this.isLoggedIn = isLoggedIn)
-    );
 
-    this.authService.auth$.subscribe(({ id, username, email }) => {
-      this.user = { id, username, email };
-    });
 
     this.uiService.progressBar$.subscribe((toggle: boolean) => this.progress = toggle);
   }
@@ -30,7 +23,7 @@ export class HeaderComponent implements OnInit {
 }
 
 onLogOut(){
-  this.authService.signout();
+
 }
 
 }

@@ -14,7 +14,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule} from './modules/material.module';
 // import { AuthComponent } from './components/auth/auth.component';
 import { UiService } from './services/ui.service';
-import { AuthService } from './services/auth.service';
 import { XtermService } from './services/xterm.service';
 import { SocketService } from './services/socket.service';
 import { ProtobufService } from './services/protobuf.service';
@@ -39,7 +38,7 @@ import { ErrorService } from './services/error.service';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [UiService, AuthService, AmplifyService, XtermService, SocketService, ProtobufService, ErrorService],
+  providers: [UiService, AmplifyService, XtermService, SocketService, ProtobufService, ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
