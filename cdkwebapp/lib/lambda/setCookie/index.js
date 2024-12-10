@@ -4,7 +4,7 @@ exports.handler = async (event) => {
     const origin = event.headers['origin'] ? event.headers['origin'] : 'localhost';
     let d = new Date()
     d.setTime(d.getTime() + (2*60*60*1000))
-    let cookie = `awsiot-tunnel-token=${token}; path=/tunnel; expires=${d}; domain=.amazonaws.com; SameSite=None; Secure; HttpOnly`
+    let cookie = `awsiot-tunnel-token=${token}; path=/tunnel; expires=${d}; domain=.amazonaws.com.cn; SameSite=None; Secure; HttpOnly`
     const response = {
         headers: {
             'Set-Cookie': cookie,
