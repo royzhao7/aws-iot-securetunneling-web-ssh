@@ -7,4 +7,4 @@ exports.awsconfig = {
   // }
 }
 
-exports.API_SET_COOKIE = 'REPLACE WITH API ENDPOINT'
+exports.API_SET_COOKIE = 'https://1rx350hqdl.execute-api.cn-north-1.amazonaws.com.cn/prod/'
