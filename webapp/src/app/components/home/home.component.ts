@@ -60,8 +60,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   async onSubmit(form: FormGroup) {
     this.errorService.werror.next('')
     let access_token:string = form.value.token
-    let urlencoded_token = encodeURI(access_token)
-    const url = `wss://data.tunneling.iot.${form.value.region.region}.amazonaws.com.cn:433/tunnel?local-proxy-mode=source&access-token=${urlencoded_token}`
+    let urlencoded_token = encodeURIComponent(access_token)
+    const url = `wss://data.tunneling.iot.${form.value.region.region}.amazonaws.com.cn/tunnel?local-proxy-mode=source&access-token=${urlencoded_token}`
 
     // const cookie = await this.http.post(`${API_SET_COOKIE}`, {token: form.value.token, region: form.value.region.region}, {withCredentials: true, }).toPromise()
     // console.log('cookie:',cookie)

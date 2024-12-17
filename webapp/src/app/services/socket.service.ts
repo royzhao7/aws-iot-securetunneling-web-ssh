@@ -65,8 +65,9 @@ export class SocketService {
     console.log('websocket closed')
     console.log(e)
     let err_msg = e.reason ? e.reason : 'Error. Connection closed....'
+    console.log(err_msg)
     this.errorService.werror.next(`${err_msg}`)
-    this.xtermService.term.clear()
+    // this.xtermService.term.clear()
     this.socket.close()
 
     if(term){
@@ -109,18 +110,18 @@ export class SocketService {
           console.log("UNKNOW")
           break;
         case 1:
-        //  console.log("DATA")
+        console.log("DATA")
           if (jsonMessage.payload){
             payload = jsonMessage.payload
             payload = atob(payload)
-            // console.log(payload)
+            console.log(payload)
             transport.settings.setNetTraffic(transport.parceler.receiveData, true);
             transport.settings.setNetTraffic(transport.parceler.transmitData, false);
             transport.parceler.handle(payload);
           }
           break;
         case 2:
-     //       console.log("STREAM START")
+      console.log("STREAM START")
             this.streamId = jsonMessage.streamId
           break;
         case 3:
