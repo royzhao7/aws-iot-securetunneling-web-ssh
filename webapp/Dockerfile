@@ -1,10 +1,29 @@
-FROM node:lts-alpine
-ENV NODE_ENV=production
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+# Use Node.js 16 as the base image for building the Angular application
+FROM node:16 AS build
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
 COPY . .
+
+# Build the Angular application
+RUN npm run build --prod
+
+# Start a new stage to serve the application
+FROM nginx:alpine
+
+# Copy the built application from the previous stage
+COPY --from=build /app/dist/<your-angular-app-name> /usr/share/nginx/html
+
+# Expose the default NGINX port
 EXPOSE 4200
-RUN chown -R node /usr/src/app
-USER node
-CMD ["npm", "start"]
+
+# Command to run NGINX
+CMD ["nginx", "-g", "daemon off;"]
