@@ -10,3 +10,4 @@ cdkwebapp/cdk.out
 cdkwebapp/.DS_store
 
 webapp/.DS_store
+webapp/dist

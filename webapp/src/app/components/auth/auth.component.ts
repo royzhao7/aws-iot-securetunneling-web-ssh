@@ -28,7 +28,7 @@ export class AuthComponent implements OnInit {
      this.error = false;
      this.uiService.progressBar$.next(true);
     try {
-      let user = await this.authService.signin(form.value.username, form.value.password);
+      // let user = await this.authService.signin(form.value.username, form.value.password);
 
       this.uiService.progressBar$.next(false);
       this.router.navigateByUrl('/');

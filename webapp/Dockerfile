@@ -20,10 +20,10 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built application from the previous stage
-COPY --from=build /app/dist/<your-angular-app-name> /usr/share/nginx/html
+COPY --from=build /app/dist/angularstarter /usr/share/nginx/html
 
 # Expose the default NGINX port
-EXPOSE 4200
+EXPOSE 80
 
 # Command to run NGINX
 CMD ["nginx", "-g", "daemon off;"]
